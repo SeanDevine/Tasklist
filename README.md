@@ -1,2 +1,2 @@
-# Example
-An example greeter plugin
+# Tasklist
+A tasklist plugin
