@@ -46,12 +46,12 @@ public class TasklistPlugin extends Plugin
 	@Override
 	protected void startUp()
 	{
-		final BufferedImage icon = itemManager.getImage(ItemID.TODO_LIST);
+		final BufferedImage icon = itemManager.getImage(6648);
 
 		navButton = NavigationButton.builder()
 				.tooltip("Tasklist")
 				.icon(icon)
-				.priority(7)
+				.priority(6)
 				.panel(tasklistPanel)
 				.build();
 
