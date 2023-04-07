@@ -9,14 +9,12 @@ import javax.inject.Inject;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.ItemEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 @Slf4j
 class TasklistPanel extends PluginPanel
 {
-
     private final JPanel mainPanel = new JPanel(new BorderLayout());
     private final TasklistPlugin plugin;
     private final TaskManager taskManager;
@@ -25,7 +23,6 @@ class TasklistPanel extends PluginPanel
     private ItemManager itemManager;
 
     private final JPanel taskListPanel = new JPanel();
-
 
     @Inject
     public TasklistPanel(TasklistPlugin plugin, TaskManager taskManager) {
@@ -92,11 +89,6 @@ class TasklistPanel extends PluginPanel
             taskLabel.setForeground(Color.WHITE);
             taskLabel.setBackground(ColorScheme.DARK_GRAY_COLOR);
 
-//            JButton removeButton = new JButton("X");
-//            removeButton.addActionListener(e -> {
-//                removeTask(task);
-//            });
-
             JLabel removeLabel = new JLabel();
             removeLabel.setIcon(new ImageIcon(itemManager.getImage(553)));
             removeLabel.setToolTipText("Remove task");
@@ -118,9 +110,6 @@ class TasklistPanel extends PluginPanel
         taskListPanel.revalidate();
         taskListPanel.repaint();
     }
-
-
-
 
     private void addTask(String description) {
         Task task = new Task(description);

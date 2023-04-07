@@ -8,15 +8,11 @@ import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.ItemID;
 import net.runelite.client.config.ConfigManager;
-import net.runelite.client.eventbus.Subscribe;
-import net.runelite.client.events.ProfileChanged;
 import net.runelite.client.game.ItemManager;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
 import net.runelite.client.ui.ClientToolbar;
 import net.runelite.client.ui.NavigationButton;
-import net.runelite.client.util.ImageUtil;
-
 import java.awt.image.BufferedImage;
 
 @Slf4j
@@ -47,14 +43,10 @@ public class TasklistPlugin extends Plugin
 
 	private NavigationButton navButton;
 
-
-//final BufferedImage icon = ImageUtil.loadImageResource(getClass(), "notes_icon.png");
-
 	@Override
 	protected void startUp()
 	{
 		final BufferedImage icon = itemManager.getImage(ItemID.TODO_LIST);
-//		final BufferedImage icon = ImageUtil.loadImageResource(getClass(), "notes_icon.png");
 
 		navButton = NavigationButton.builder()
 				.tooltip("Tasklist")
@@ -64,19 +56,12 @@ public class TasklistPlugin extends Plugin
 				.build();
 
 		clientToolbar.addNavigation(navButton);
-
 	}
 
 	@Override
 	protected void shutDown()
 	{
 		clientToolbar.removeNavigation(navButton);
-	}
-
-	@Subscribe
-	public void onProfileChanged(ProfileChanged profileChanged)
-	{
-		// update notes
 	}
 
 	@Provides

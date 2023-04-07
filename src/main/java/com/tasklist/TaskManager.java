@@ -30,10 +30,8 @@ public class TaskManager {
         // Retrieve the task from the list of tasks
         int index = taskList.indexOf(task);
         if (index >= 0) {
-            // Update the task in the list
             taskList.set(index, task);
         } else {
-            // Task not found in the list
             throw new IllegalArgumentException("Task not found: " + task);
         }
     }

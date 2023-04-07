@@ -1,8 +1,5 @@
 package com.tasklist;
 
-import lombok.Getter;
-import lombok.Setter;
-
 public class Task {
     private String description;
     private boolean completed = false;
